@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class PackAnimal extends Animal{
 
     public PackAnimal(int id, String name, String dateOfBirth) {
@@ -26,11 +29,9 @@ public class PackAnimal extends Animal{
         super.setDateOfBirth(dateOfBirth);
     }
 
-    @Override
-    public String toString() {
-        return "PackAnimal{" +
-                "name='" + getName() +
-                ", dateOfBirth='" + getDateOfBirth() +
-                '}';
+    void showAllCommands(ArrayList<CommandsPackAnimals> listCommands){
+        ArrayList<CommandsPackAnimals> list =
+                new ArrayList<CommandsPackAnimals>(Arrays.asList(CommandsPackAnimals.values()));
+        System.out.println("Команды вьючных животных: " + list);
     }
 }

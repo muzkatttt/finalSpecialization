@@ -1,8 +1,5 @@
 import model.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -15,6 +12,7 @@ public class Main {
         Pet dog3 = new Pet(7, "Bella", "2019-11-11");
         Pet cat3 = new Pet(8, "Oliver", "2020-06-30");
 
+        PackAnimal horse = new PackAnimal(1, "Thunder", "2015-07-21");
 
         AnimalsList animals = new AnimalsList();
         animals.addAnimal(dog);
@@ -25,17 +23,11 @@ public class Main {
         animals.addAnimal(hamster2);
         animals.addAnimal(dog3);
         animals.addAnimal(cat3);
+        animals.addAnimal(horse);
 
-        System.out.println(animals.showListAnimalsFromDateOfBirth().toString());
+        System.out.println(horse.getId() + " " + horse.getName()+ " " + horse.getDateOfBirth());
+        animals.showAllCommands();
 
-        animals.showCommands();
 
-        ArrayList<CommandsPetAnimal> list1 =
-                new ArrayList<CommandsPetAnimal>(Arrays.asList(CommandsPetAnimal.values()));
-        System.out.println("Команды домашних животных: " + list1);
-
-        ArrayList<CommandsPackAnimals> list2 =
-                new ArrayList<CommandsPackAnimals>(Arrays.asList(CommandsPackAnimals.values()));
-        System.out.println("Команды вьючных животных: " + list2);
     }
 }

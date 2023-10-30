@@ -8,14 +8,12 @@ public interface AnimalListInterface {
 
     ArrayList<Animal> addAnimal(Animal animal);
 
-    void showCommands();
+    void showAllCommands();
 
     //void addComand();
 
-    ArrayList<AnimalIterator> showListAnimalsFromDateOfBirth();
-
-    ArrayList<AnimalIterator> showListAnimalsFromDateOfBirth(Animal animal);
-
     void showListAllAnimals(ArrayList<Animal>animals);
 
+    int compare(Animal o1, Animal o2);
 }
+
