@@ -1,0 +1,214 @@
+Last login: Sat Oct 28 13:25:01 on ttys000
+➜  ~ ssh root@194.67.67.155
+root@194.67.67.155's password: 
+Connection closed by 194.67.67.155 port 22
+➜  ~ ssh root@194.67.67.155
+root@194.67.67.155's password: 
+Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.0-87-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun Oct 29 08:00:22 PM MSK 2023
+
+  System load:                      0.271484375
+  Usage of /:                       27.9% of 14.68GB
+  Memory usage:                     38%
+  Swap usage:                       0%
+  Processes:                        111
+  Users logged in:                  0
+  IPv4 address for br-584fc7d5d706: 172.22.0.1
+  IPv4 address for br-bd24d2fb6334: 172.30.0.1
+  IPv4 address for docker0:         172.17.0.1
+  IPv4 address for eth0:            194.67.67.155
+  IPv6 address for eth0:            2a00:f940:2:4:2::4a6a
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+2 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Fri Oct 27 18:48:51 2023 from 178.205.244.55
+root@194-67-67-155:~# ls -l
+total 8
+drwxr-xr-x 4 root root 4096 Oct 27 19:17 gb
+drwx------ 3 root root 4096 Oct 26 02:31 snap
+root@194-67-67-155:~# cd gb
+root@194-67-67-155:~/gb# ls -l
+total 32
+-rw-r--r-- 1 root root   21927 Oct 26 19:59 get-docker.sh
+drwxr-xr-x 6 lxd  docker  4096 Oct 27 20:25 mariadbGB
+drwxr-xr-x 2 root root    4096 Oct 27 19:10 myfolder
+root@194-67-67-155:~/gb# mkdir finalhw
+root@194-67-67-155:~/gb# cd finalhw
+root@194-67-67-155:~/gb/finalhw# client_loop: send disconnect: Broken pipe
+➜  ~ ssh root@194.67.67.155
+root@194.67.67.155's password: 
+Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.0-87-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun Oct 29 09:27:07 PM MSK 2023
+
+  System load:                      0.04638671875
+  Usage of /:                       27.9% of 14.68GB
+  Memory usage:                     38%
+  Swap usage:                       0%
+  Processes:                        109
+  Users logged in:                  1
+  IPv4 address for br-584fc7d5d706: 172.22.0.1
+  IPv4 address for br-bd24d2fb6334: 172.30.0.1
+  IPv4 address for docker0:         172.17.0.1
+  IPv4 address for eth0:            194.67.67.155
+  IPv6 address for eth0:            2a00:f940:2:4:2::4a6a
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+2 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Sun Oct 29 20:00:24 2023 from 178.205.244.55
+root@194-67-67-155:~# cd gb
+root@194-67-67-155:~/gb# ls -l
+total 36
+drwxr-xr-x 2 root root    4096 Oct 29 20:00 finalhw
+-rw-r--r-- 1 root root   21927 Oct 26 19:59 get-docker.sh
+drwxr-xr-x 6 lxd  docker  4096 Oct 27 20:25 mariadbGB
+drwxr-xr-x 2 root root    4096 Oct 27 19:10 myfolder
+root@194-67-67-155:~/gb# cd finalhw
+root@194-67-67-155:~/gb/finalhw# vi pets.txt
+root@194-67-67-155:~/gb/finalhw# cat pets.txt
+ID	Name	    	Type		BirthDate	    Commands
+1	Fido	    	Dog	    	2020-01-01	    Sit, Stay, Fetch
+2	Whiskers	Cat	    	2019-05-15	    Sit, Pounce
+3	Hammy	    	Hamster		2021-03-10	    Roll, Hide
+4	Buddy	    	Dog	    	2018-12-10	    Sit, Paw, Bark
+5	Smudge	    	Cat	    	2020-02-20	    Sit, Pounce, Scratch
+6	Peanut	    	Hamster		2021-08-01	    Roll, Spin
+7	Bella	    	Dog	    	2019-11-11	    Sit, Stay, Roll
+8	Oliver	    	Cat	    	2020-06-30	    Meow, Scratch, Jump
+root@194-67-67-155:~/gb/finalhw# vi pack_animals.txt
+root@194-67-67-155:~/gb/finalhw# cat pack_animals.txt
+ID	Name		Type		BirthDate	Commands
+1	Thunder		Horse		2015-07-21	Trot, Canter, Gallop
+2	Sandy		Camel		2016-11-03	Walk, Carry Load
+3	Eeyore		Donkey		2017-09-18	Walk, Carry Load, Bray
+4	Storm		Horse		2014-05-05	Trot, Canter
+5	Dune		Camel		2018-12-12	Walk, Sit
+6	Burro		Donkey		2019-01-23	Walk, Bray, Kick
+7	Blaze		Horse		2016-02-29	Trot, Jump, Gallop
+8	Sahara		Camel		2015-08-14	Walk, Run
+root@194-67-67-155:~/gb/finalhw# cat pets.txt pack_animals.txt > human_friends.txt
+root@194-67-67-155:~/gb/finalhw# cat human_friends.txt
+ID	Name	    	Type		BirthDate	    Commands
+1	Fido	    	Dog	    	2020-01-01	    Sit, Stay, Fetch
+2	Whiskers	Cat	    	2019-05-15	    Sit, Pounce
+3	Hammy	    	Hamster		2021-03-10	    Roll, Hide
+4	Buddy	    	Dog	    	2018-12-10	    Sit, Paw, Bark
+5	Smudge	    	Cat	    	2020-02-20	    Sit, Pounce, Scratch
+6	Peanut	    	Hamster		2021-08-01	    Roll, Spin
+7	Bella	    	Dog	    	2019-11-11	    Sit, Stay, Roll
+8	Oliver	    	Cat	    	2020-06-30	    Meow, Scratch, Jump
+ID	Name		Type		BirthDate	Commands
+1	Thunder		Horse		2015-07-21	Trot, Canter, Gallop
+2	Sandy		Camel		2016-11-03	Walk, Carry Load
+3	Eeyore		Donkey		2017-09-18	Walk, Carry Load, Bray
+4	Storm		Horse		2014-05-05	Trot, Canter
+5	Dune		Camel		2018-12-12	Walk, Sit
+6	Burro		Donkey		2019-01-23	Walk, Bray, Kick
+7	Blaze		Horse		2016-02-29	Trot, Jump, Gallop
+8	Sahara		Camel		2015-08-14	Walk, Run
+root@194-67-67-155:~/gb/finalhw# ls
+human_friends.txt  pack_animals.txt  pets.txt
+root@194-67-67-155:~/gb/finalhw# mkdir human_friends
+root@194-67-67-155:~/gb/finalhw# ls -l
+total 16
+drwxr-xr-x 2 root root 4096 Oct 29 21:37 human_friends
+-rw-r--r-- 1 root root  846 Oct 29 21:33 human_friends.txt
+-rw-r--r-- 1 root root  385 Oct 29 21:31 pack_animals.txt
+-rw-r--r-- 1 root root  461 Oct 29 21:29 pets.txt
+root@194-67-67-155:~/gb/finalhw# mv human_friends.txt human_friends.txt/human_friends
+mv: failed to access 'human_friends.txt/human_friends': Not a directory
+root@194-67-67-155:~/gb/finalhw# mv human_friends.txt /human_friends
+root@194-67-67-155:~/gb/finalhw# ls -l
+total 12
+drwxr-xr-x 2 root root 4096 Oct 29 21:37 human_friends
+-rw-r--r-- 1 root root  385 Oct 29 21:31 pack_animals.txt
+-rw-r--r-- 1 root root  461 Oct 29 21:29 pets.txt
+root@194-67-67-155:~/gb/finalhw# cd human_friends
+root@194-67-67-155:~/gb/finalhw/human_friends# ls
+root@194-67-67-155:~/gb/finalhw/human_friends# ls -l
+total 0
+root@194-67-67-155:~/gb/finalhw/human_friends# ls -l
+total 0
+root@194-67-67-155:~/gb/finalhw/human_friends# ls -al
+total 8
+drwxr-xr-x 2 root root 4096 Oct 29 21:37 .
+drwxr-xr-x 3 root root 4096 Oct 29 21:39 ..
+root@194-67-67-155:~/gb/finalhw/human_friends# cd ..
+root@194-67-67-155:~/gb/finalhw# ls -l
+total 12
+drwxr-xr-x 2 root root 4096 Oct 29 21:37 human_friends
+-rw-r--r-- 1 root root  385 Oct 29 21:31 pack_animals.txt
+-rw-r--r-- 1 root root  461 Oct 29 21:29 pets.txt
+root@194-67-67-155:~/gb/finalhw# cat pets.txt pack_animals.txt > human_friends.txt
+root@194-67-67-155:~/gb/finalhw# ls -l
+total 16
+drwxr-xr-x 2 root root 4096 Oct 29 21:37 human_friends
+-rw-r--r-- 1 root root  846 Oct 29 21:41 human_friends.txt
+-rw-r--r-- 1 root root  385 Oct 29 21:31 pack_animals.txt
+-rw-r--r-- 1 root root  461 Oct 29 21:29 pets.txt
+root@194-67-67-155:~/gb/finalhw# mv human_friends.txt /human_friends/
+mv: failed to access '/human_friends/': Not a directory
+root@194-67-67-155:~/gb/finalhw# mv human_friends.txt human_friends.txt/human_friends
+mv: failed to access 'human_friends.txt/human_friends': Not a directory
+root@194-67-67-155:~/gb/finalhw# ls -l
+total 16
+drwxr-xr-x 2 root root 4096 Oct 29 21:37 human_friends
+-rw-r--r-- 1 root root  846 Oct 29 21:41 human_friends.txt
+-rw-r--r-- 1 root root  385 Oct 29 21:31 pack_animals.txt
+-rw-r--r-- 1 root root  461 Oct 29 21:29 pets.txt
+root@194-67-67-155:~/gb/finalhw# cd human_friends
+root@194-67-67-155:~/gb/finalhw/human_friends# pwd
+/root/gb/finalhw/human_friends
+root@194-67-67-155:~/gb/finalhw/human_friends# mv human_friends.txt human_friends.txt/root/gb/finalhw/human_friends
+mv: cannot stat 'human_friends.txt': No such file or directory
+root@194-67-67-155:~/gb/finalhw/human_friends# mv human_friends.txt /root/gb/finalhw/human_friends
+mv: cannot stat 'human_friends.txt': No such file or directory
+root@194-67-67-155:~/gb/finalhw/human_friends# mv human_friends.txt/root/gb/finalhw human_friends.txt/root/gb/finalhw/human_friends
+mv: cannot stat 'human_friends.txt/root/gb/finalhw': No such file or directory
+root@194-67-67-155:~/gb/finalhw/human_friends# mv human_friends.txt/root/gb/finalhw/ human_friends.txt/root/gb/finalhw/human_friends/
+mv: cannot stat 'human_friends.txt/root/gb/finalhw/': No such file or directory
+root@194-67-67-155:~/gb/finalhw/human_friends# cd ..
+root@194-67-67-155:~/gb/finalhw# ls -l
+total 16
+drwxr-xr-x 2 root root 4096 Oct 29 21:37 human_friends
+-rw-r--r-- 1 root root  846 Oct 29 21:41 human_friends.txt
+-rw-r--r-- 1 root root  385 Oct 29 21:31 pack_animals.txt
+-rw-r--r-- 1 root root  461 Oct 29 21:29 pets.txt
+root@194-67-67-155:~/gb/finalhw# human_friends.txt /root/gb/finalhw/human_friends/
+-bash: human_friends.txt: command not found
+root@194-67-67-155:~/gb/finalhw# mv human_friends.txt /root/gb/finalhw/human_friends/
+root@194-67-67-155:~/gb/finalhw# ls -l
+total 12
+drwxr-xr-x 2 root root 4096 Oct 29 21:49 human_friends
+-rw-r--r-- 1 root root  385 Oct 29 21:31 pack_animals.txt
+-rw-r--r-- 1 root root  461 Oct 29 21:29 pets.txt
+root@194-67-67-155:~/gb/finalhw# cd human_friends
+root@194-67-67-155:~/gb/finalhw/human_friends# ls -l
+total 4
+-rw-r--r-- 1 root root 846 Oct 29 21:41 human_friends.txt
+root@194-67-67-155:~/gb/finalhw/human_friends# 
