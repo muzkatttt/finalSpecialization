@@ -1,52 +1,97 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
 
-abstract class Animal{
+public abstract class Animal implements AnimalInterface {
 
-    int id;
+    private static int count = 0;
+    private int id = count++;
     String name;
     String dateOfBirth;
-    private String commands;
+    LinkedList<String> commands;
 
-    public Animal(int id, String name, String dateOfBirth) {
-        this.name = name;
-        this.dateOfBirth = dateOfBirth;
-    }
+    LinkedList<Animal> animalLinkedList;
 
-    public Animal(int id, String name, String dateOfBirth, String commands) {
+    public Animal(int id, String name, String dateOfBirth, LinkedList<String> commands) {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.commands = commands;
     }
 
-    public int getId() {
-        return id;
+    public Animal(int id, String name, String dateOfBirth) {
+        this.id = id;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getId() {
+        return id;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public LinkedList<String> getCommands() {
+        return commands;
     }
 
-    public void addCommands(String commands){
-        //
+    @Override
+    public void showAllAnimals(LinkedList<Animal> animalLinkedList) {
+        if(animalLinkedList ==null) {
+            System.out.println("В реестре нет животных");
+        } else {
+            System.out.println("В реестре добавлены животные: ");
+            for (int i = 0; i < animalLinkedList.size(); i++) {
+                System.out.println(animalLinkedList.element());
+            }
+        }
+    }
+
+    @Override
+    public void addAnimalToList(Animal animal) {
+        animalLinkedList.add(animal);
+    }
+
+    @Override
+    public void showAllCommands(Animal animal) {
+        if(animal.getCommands().isEmpty()){
+            System.out.println("У " + this.name + " нет команд!");
+        } else {
+            System.out.println("Команды животного " + animal.getCommands());
+        }
+    }
+
+    @Override
+    public void addCommand(Animal animal) {
+        if(animal.getCommands().isEmpty()) {
+            animal.commands.addAll(0, commands);
+        }
+    }
+
+    @Override
+    public void showAllAnimalByDateOfBirth() {
+        // добавлю позже
+    }
+
+    @Override
+    public int sizeOfCollection(LinkedList<Animal> animalLinkedList) {
+        return animalLinkedList.size();
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "id=" + this.id +
+                ", name='" + this.name + '\'' +
+                ", dateOfBirth='" + this.dateOfBirth + '\'' +
+                ", commands=" + this.commands +
+                '}';
     }
 }

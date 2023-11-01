@@ -1,33 +1,33 @@
 import model.*;
 
+import java.util.LinkedList;
+
 public class Main {
     public static void main(String[] args) {
 
-        Pet dog = new Pet(1, "Fido", "2020-01-01");
-        Pet cat = new Pet(2, "Whiskers", "2019-05-15");
-        Pet hamster = new Pet(3, "Hammy", "2021-03-10");
-        Pet dog2 = new Pet(4, "Buddy", "2018-12-10");
-        Pet cat2 = new Pet(5, "Smudge", "2020-02-20");
-        Pet hamster2 = new Pet(6, "Peanut", "2021-08-01");
-        Pet dog3 = new Pet(7, "Bella", "2019-11-11");
-        Pet cat3 = new Pet(8, "Oliver", "2020-06-30");
+        Cat cat = new Cat(1, "Whiskers", "2019-05-15");
+        Dog dog = new Dog(2, "Fido", "2020-01-01");
+        Hamster hamster = new Hamster(3, "Hammy", "2021-03-10");
+        Horse horse = new Horse(4, "Thunder", "2015-07-21");
+        Camel camel = new Camel(5, "Sandy", "2016-11-03");
+        Donkey donkey = new Donkey(6, "Burro", "2019-01-23");
 
-        PackAnimal horse = new PackAnimal(1, "Thunder", "2015-07-21");
+        LinkedList<Animal> animals = new LinkedList<>();
+        animals.add(cat);
+        System.out.println(cat);
+        animals.add(dog);
+        System.out.println(dog);
+        animals.add(hamster);
+        System.out.println(hamster);
+        animals.add(horse);
+        System.out.println(horse);
+        animals.add(camel);
+        System.out.println(camel);
+        animals.add(donkey);
+        System.out.println(donkey);
 
-        AnimalsList animals = new AnimalsList();
-        animals.addAnimal(dog);
-        animals.addAnimal(cat);
-        animals.addAnimal(hamster);
-        animals.addAnimal(dog2);
-        animals.addAnimal(cat2);
-        animals.addAnimal(hamster2);
-        animals.addAnimal(dog3);
-        animals.addAnimal(cat3);
-        animals.addAnimal(horse);
-
-        System.out.println(horse.getId() + " " + horse.getName()+ " " + horse.getDateOfBirth());
-        animals.showAllCommands();
-
-
+        System.out.println(animals);
+        System.out.println(animals.size());
+        
     }
 }
