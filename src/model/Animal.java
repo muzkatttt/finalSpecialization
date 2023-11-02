@@ -1,19 +1,18 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Queue;
 
-public abstract class Animal implements AnimalInterface {
+public class Animal implements AnimalInterface {
 
     private static int count = 0;
-    private int id = count++;
+    int id;
     String name;
     String dateOfBirth;
-    LinkedList<String> commands;
+    //private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d");
+    ArrayList<String> commands;
 
-    LinkedList<Animal> animalLinkedList;
-
-    public Animal(int id, String name, String dateOfBirth, LinkedList<String> commands) {
+    public Animal(int id, String name, String dateOfBirth, ArrayList<String> commands) {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -38,53 +37,34 @@ public abstract class Animal implements AnimalInterface {
         return dateOfBirth;
     }
 
-    public LinkedList<String> getCommands() {
+    public ArrayList<String> getCommands() {
         return commands;
-    }
-
-    @Override
-    public void showAllAnimals(LinkedList<Animal> animalLinkedList) {
-        if(animalLinkedList ==null) {
-            System.out.println("В реестре нет животных");
-        } else {
-            System.out.println("В реестре добавлены животные: ");
-            for (int i = 0; i < animalLinkedList.size(); i++) {
-                System.out.println(animalLinkedList.element());
-            }
-        }
-    }
-
-    @Override
-    public void addAnimalToList(Animal animal) {
-        animalLinkedList.add(animal);
     }
 
     @Override
     public void showAllCommands(Animal animal) {
         if(animal.getCommands().isEmpty()){
-            System.out.println("У " + this.name + " нет команд!");
+            System.out.println("У " + animal.getName() + " нет команд!");
         } else {
             System.out.println("Команды животного " + animal.getCommands());
         }
     }
 
     @Override
-    public void addCommand(Animal animal) {
-        if(animal.getCommands().isEmpty()) {
-            animal.commands.addAll(0, commands);
+    public void addCommand(PetAnimal petAnimal, String newCommand) {
+        if(petAnimal.commands.isEmpty()) {
+            petAnimal.commands.add(newCommand);
+        } else {
+            petAnimal.commands.add(newCommand);
+            System.out.println("Добавлена новая команда: " + newCommand);
         }
     }
 
-    @Override
-    public void showAllAnimalByDateOfBirth() {
-        // добавлю позже
-    }
 
-    @Override
-    public int sizeOfCollection(LinkedList<Animal> animalLinkedList) {
-        return animalLinkedList.size();
+    public int id(){
+        id = count++;
+        return id;
     }
-
     @Override
     public String toString() {
         return "Animal{" +

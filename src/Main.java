@@ -12,22 +12,43 @@ public class Main {
         Camel camel = new Camel(5, "Sandy", "2016-11-03");
         Donkey donkey = new Donkey(6, "Burro", "2019-01-23");
 
-        LinkedList<Animal> animals = new LinkedList<>();
+        LinkedList<PetAnimal> animals = new LinkedList<>();
         animals.add(cat);
-        System.out.println(cat);
+//        System.out.println(cat);
         animals.add(dog);
-        System.out.println(dog);
+//        System.out.println(dog);
         animals.add(hamster);
-        System.out.println(hamster);
-        animals.add(horse);
-        System.out.println(horse);
-        animals.add(camel);
-        System.out.println(camel);
-        animals.add(donkey);
-        System.out.println(donkey);
+//        System.out.println(hamster);
+//        animals.add(horse);
+//        System.out.println(horse);
+//        animals.add(camel);
+//        System.out.println(camel);
+//        animals.add(donkey);
+//        System.out.println(donkey);
+//
+//        System.out.println(animals);
+//        System.out.println(animals.size());
 
-        System.out.println(animals);
-        System.out.println(animals.size());
+       AnimalLog animalLog = new AnimalLog();
+       //animalLog.addAnimalToList(cat);
+       //animalLog.addAnimalToList(dog);
+       //animalLog.addAnimalToList(hamster);
+       //animalLog.addAnimalToList(horse);
+       //animalLog.addAnimalToList(camel);
+       //animalLog.addAnimalToList(donkey);
+        PetAnimal petAnimal = new PetAnimal(9, "Pelmeshka", "2020-10-10");
+        petAnimal.addCommand(cat, "MEOW");
+       animalLog.showAllAnimals(animals);
+//       System.out.println(animalLog.addAnimalToList(cat));
+//       System.out.println(animalLog.addAnimalToList(dog));
+       //animalLog.showAllAnimals(animals);
+       // System.out.println(animalLog.addAnimalToList(cat));
+//       System.out.println(animalLog.addAnimalToList(dog));
+//       System.out.println(animalLog.addAnimalToList(hamster));
+//       System.out.println(animalLog.addAnimalToList(camel));
+//       System.out.println(animalLog.addAnimalToList(horse));
+//       System.out.println(animalLog.addAnimalToList(donkey));
+
         
     }
 }

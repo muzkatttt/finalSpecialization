@@ -1,14 +1,15 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 
 
 public class PetAnimal extends Animal{
 
-    LinkedList<String> commandsPetAnimal;
+    ArrayList<String> commandsPetAnimal;
 
-    public PetAnimal(int id, String name, String dateOfBirth, LinkedList<String> commands) {
+    public PetAnimal(int id, String name, String dateOfBirth, ArrayList<String> commands) {
         super(id, name, dateOfBirth, commands);
     }
 
@@ -16,7 +17,7 @@ public class PetAnimal extends Animal{
         super(id, name, dateOfBirth);
     }
 
-    void showAllCommandsPetAnimal(LinkedList<String> commandsPetAnimal){
+    void showAllCommandsPetAnimal(ArrayList<String> commandsPetAnimal){
         commandsPetAnimal.add("STAY"); // стоять
         commandsPetAnimal.add("SIT"); // сидеть
         commandsPetAnimal.add("FETCH"); // Апорт! используется в значении «Взять»

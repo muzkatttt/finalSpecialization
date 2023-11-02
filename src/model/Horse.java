@@ -1,9 +1,9 @@
 package model;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class Horse extends PackAnimal {
-    public Horse(int id, String name, String dateOfBirth, LinkedList<String> commands) {
+    public Horse(int id, String name, String dateOfBirth, ArrayList<String> commands) {
         super(id, name, dateOfBirth, commands);
     }
 
