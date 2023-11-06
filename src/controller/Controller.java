@@ -5,7 +5,7 @@ import model.AnimalLog;
 import java.util.LinkedList;
 
 public class Controller {
-    AnimalLog animalLog = new AnimalLog();
+    AnimalLog animalLog;
     LinkedList<Animal> animalLinkedList = new LinkedList<>();
     Animal animal;
 
@@ -25,7 +25,10 @@ public class Controller {
     }
 
     public void showAllAnimals() {
-        animalLog.showAllAnimals();
+        for (Animal animal :
+             animalLinkedList) {
+            System.out.println(animal);
+        }
     }
     public String addCommand(String newCommand){
         animalLog.addCommand(animal, newCommand);
@@ -33,6 +36,6 @@ public class Controller {
     }
 
     public void showAllCommands(Animal animal){
-        animalLog.showAllCommands(animal);
+        System.out.println(animal.getCommands());
     }
 }

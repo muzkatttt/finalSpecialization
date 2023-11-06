@@ -7,7 +7,6 @@ public class Animal {
     String dateOfBirth;
     String commands;
 
-
     public Animal(int id, String name, String dateOfBirth, String commands) {
         this.id = id;
         this.name = name;
@@ -19,6 +18,10 @@ public class Animal {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public Animal(String name) {
+        this.name = name;
     }
 
     public int getId() {

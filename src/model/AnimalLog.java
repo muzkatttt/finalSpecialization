@@ -1,28 +1,19 @@
 package model;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.LinkedList;
 
 public class AnimalLog implements AnimalLogInterface {
 
-    Animal animal;
+    private Animal animal;
+
     LinkedList<Animal> animalLinkedList = new LinkedList<>();
-
-
-    public AnimalLog(Animal animal, LinkedList<Animal> animalLinkedList) {
-        this.animal = animal;
-       this.animalLinkedList = animalLinkedList;
-    }
-
-    public AnimalLog(LinkedList<Animal> animalLinkedList) {
-        this.animalLinkedList = animalLinkedList;
-    }
 
     public AnimalLog(Animal animal) {
         this.animal = animal;
     }
 
-    public AnimalLog() {
-    }
 
     @Override
     public boolean addAnimalToList(Animal animal) {
@@ -51,17 +42,7 @@ public class AnimalLog implements AnimalLogInterface {
 
 
     @Override
-    public void showAllAnimalByDateOfBirth() {
-        // добавлю позже
-    }
-
-    @Override
-    public LinkedList<Animal> createNewLinkedList() {
-        return new LinkedList<Animal>();
-    }
-
-    @Override
-    public String addCommand(Animal animal, String newCommand) {
+    public String addCommand(@NotNull Animal animal, String newCommand) {
         StringBuilder sb = new StringBuilder();
         if(animal.commands.isEmpty()) {
             sb.append(newCommand);
@@ -74,7 +55,7 @@ public class AnimalLog implements AnimalLogInterface {
         return sb.toString();
     }
 
-    public void showAllCommands(Animal animal) {
+    public void showAllCommands(@NotNull Animal animal) {
         if(animal.getCommands().isEmpty()){
             System.out.println("У " + animal.getName() + " нет команд!");
         } else {
