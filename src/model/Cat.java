@@ -1,9 +1,9 @@
 package model;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class Cat extends PetAnimal {
-    public Cat(int id, String name, String dateOfBirth, LinkedList<String> commands) {
+    public Cat(int id, String name, String dateOfBirth, String commands) {
         super(id, name, dateOfBirth, commands);
     }
 

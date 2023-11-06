@@ -2,12 +2,11 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 
 public class PackAnimal extends Animal{
 
-    PackAnimal packAnimal;
-    public PackAnimal(int id, String name, String dateOfBirth, LinkedList<String> commands) {
+    Animal animal;
+    public PackAnimal(int id, String name, String dateOfBirth, String commands) {
         super(id, name, dateOfBirth, commands);
     }
 
