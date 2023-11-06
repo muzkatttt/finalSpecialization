@@ -1,50 +1,46 @@
 package model;
 
-import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedList;
 
 public class AnimalLog implements AnimalLogInterface {
 
-    private Animal animal;
-
     LinkedList<Animal> animalLinkedList = new LinkedList<>();
 
-    public AnimalLog(Animal animal) {
-        this.animal = animal;
+    public AnimalLog() {
+    }
+
+    @Override
+    public void addAnimalToList(Animal animal) {
+        animalLinkedList.add(animal);
+        System.out.println("Животное " + animal.getName() + " добавлено в список");
     }
 
 
     @Override
-    public boolean addAnimalToList(Animal animal) {
-        return animalLinkedList.add(animal);
-    }
-
-
-    @Override
-    public LinkedList<Animal> deleteAnimalFromLinkedList() {
+    public LinkedList<Animal> deleteAnimalFromLinkedList(Animal animal) {
         if(animalLinkedList.contains(animal)){
             animalLinkedList.remove(animal);
         }
         return animalLinkedList;
     }
 
+
     @Override
     public void showAllAnimals() {
-        if(animalLinkedList.contains(animal)) {
+        if(!animalLinkedList.isEmpty()) {
             for (Animal animal : animalLinkedList) {
                 System.out.println(animal.toString());
             }
         } else {
-                System.out.println("Список животных пуст");
+            System.out.println("Список животных пуст");
         }
     }
 
-
     @Override
-    public String addCommand(@NotNull Animal animal, String newCommand) {
+    public String addCommand(Animal animal, String newCommand) {
         StringBuilder sb = new StringBuilder();
-        if(animal.commands.isEmpty()) {
+        if(animal.getCommands().isEmpty()) {
             sb.append(newCommand);
             sb.append(";");
         } else {
@@ -55,18 +51,40 @@ public class AnimalLog implements AnimalLogInterface {
         return sb.toString();
     }
 
-    public void showAllCommands(@NotNull Animal animal) {
+    public void showAllCommands(Animal animal) {
         if(animal.getCommands().isEmpty()){
             System.out.println("У " + animal.getName() + " нет команд!");
         } else {
             System.out.println("Команды животного " + animal.getCommands());
         }
     }
+
+    public Animal searchAnimal(String name) {
+        for (Animal animal:
+             animalLinkedList) {
+            if(animal.getName().equals(name)){
+                return animal;
+            }
+        }
+        return null;
+    }
+
+    public Animal searchDateOfBirth(String dateOfBirth) {
+        for (Animal animal:
+                animalLinkedList) {
+            if(animal.getDateOfBirth().equals(dateOfBirth)){
+                return animal;
+            }
+        }
+        return null;
+    }
     @Override
     public String toString() {
-        return "AnimalLog{" +
-                "animal=" + animal +
-                ", animalLinkedList=" + animalLinkedList +
-                '}';
+        String animalText = "";
+        for (Animal animal:
+             animalLinkedList) {
+            animalText += animal.toString() + "\n";
+        }
+        return animalText;
     }
 }

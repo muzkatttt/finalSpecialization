@@ -7,6 +7,9 @@ public class Animal {
     String dateOfBirth;
     String commands;
 
+    public Animal() {
+    }
+
     public Animal(int id, String name, String dateOfBirth, String commands) {
         this.id = id;
         this.name = name;
@@ -40,6 +43,21 @@ public class Animal {
         return commands;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setCommands(String commands) {
+        this.commands = commands;
+    }
 
     @Override
     public String toString() {
