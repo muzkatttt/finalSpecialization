@@ -1,18 +1,14 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+public class Animal {
 
-public class Animal implements AnimalInterface {
-
-    private static int count = 0;
     int id;
     String name;
     String dateOfBirth;
-    //private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d");
-    ArrayList<String> commands;
+    String commands;
 
-    public Animal(int id, String name, String dateOfBirth, ArrayList<String> commands) {
+
+    public Animal(int id, String name, String dateOfBirth, String commands) {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -37,34 +33,11 @@ public class Animal implements AnimalInterface {
         return dateOfBirth;
     }
 
-    public ArrayList<String> getCommands() {
+    public String getCommands() {
         return commands;
     }
 
-    @Override
-    public void showAllCommands(Animal animal) {
-        if(animal.getCommands().isEmpty()){
-            System.out.println("У " + animal.getName() + " нет команд!");
-        } else {
-            System.out.println("Команды животного " + animal.getCommands());
-        }
-    }
 
-    @Override
-    public void addCommand(PetAnimal petAnimal, String newCommand) {
-        if(petAnimal.commands.isEmpty()) {
-            petAnimal.commands.add(newCommand);
-        } else {
-            petAnimal.commands.add(newCommand);
-            System.out.println("Добавлена новая команда: " + newCommand);
-        }
-    }
-
-
-    public int id(){
-        id = count++;
-        return id;
-    }
     @Override
     public String toString() {
         return "Animal{" +

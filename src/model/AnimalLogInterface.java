@@ -3,12 +3,15 @@ package model;
 import java.util.LinkedList;
 
 public interface AnimalLogInterface {
-    LinkedList<PetAnimal> addAnimalToList(PetAnimal petAnimal);
+    boolean addAnimalToList(Animal animal);
 
     void showAllAnimalByDateOfBirth();
 
-    void showAllAnimals(LinkedList<PetAnimal> animalLinkedList);
+    void showAllAnimals();
+    void showAllCommands(Animal animal);
 
-    int sizeOfCollection(LinkedList<PetAnimal> animalLinkedList);
+    LinkedList<Animal> createNewLinkedList();
 
+    LinkedList<Animal> deleteAnimalFromLinkedList();
+    String addCommand(Animal animal, String newCommand);
 }

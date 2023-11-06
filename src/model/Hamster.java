@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 
 public class Hamster extends PetAnimal {
-    public Hamster(int id, String name, String dateOfBirth, ArrayList<String> commands) {
+    public Hamster(int id, String name, String dateOfBirth, String commands) {
         super(id, name, dateOfBirth, commands);
     }
 

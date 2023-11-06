@@ -7,9 +7,9 @@ import java.util.LinkedList;
 
 public class PetAnimal extends Animal{
 
-    ArrayList<String> commandsPetAnimal;
+    String commands;
 
-    public PetAnimal(int id, String name, String dateOfBirth, ArrayList<String> commands) {
+    public PetAnimal(int id, String name, String dateOfBirth, String commands) {
         super(id, name, dateOfBirth, commands);
     }
 
@@ -17,19 +17,19 @@ public class PetAnimal extends Animal{
         super(id, name, dateOfBirth);
     }
 
-    void showAllCommandsPetAnimal(ArrayList<String> commandsPetAnimal){
-        commandsPetAnimal.add("STAY"); // стоять
-        commandsPetAnimal.add("SIT"); // сидеть
-        commandsPetAnimal.add("FETCH"); // Апорт! используется в значении «Взять»
-        commandsPetAnimal.add("POUNCE"); // наскочить
-        commandsPetAnimal.add("ROLL"); // свернуться в клубок
-        commandsPetAnimal.add("HIDE"); // спрятаться
-        commandsPetAnimal.add("PAW"); // дай лапу
-        commandsPetAnimal.add("BARK"); // подать голос для собаки
-        commandsPetAnimal.add("MEOW"); // подать гоос для кошки
-        commandsPetAnimal.add("SCRATCH"); // скребсти
-        commandsPetAnimal.add("JUMP"); // прыгать
-        commandsPetAnimal.add("WALK"); // гулять
+    void showAllCommandsPetAnimal(String commands){
+        commands.concat("STAY"); // стоять
+        commands.concat(" SIT"); // сидеть
+        commands.concat(" FETCH"); // Апорт! используется в значении «Взять»
+        commands.concat("POUNCE"); // наскочить
+        commands.concat("ROLL"); // свернуться в клубок
+        commands.concat("HIDE"); // спрятаться
+        commands.concat("PAW"); // дай лапу
+        commands.concat("BARK"); // подать голос для собаки
+        commands.concat("MEOW"); // подать гоос для кошки
+        commands.concat("SCRATCH"); // скребсти
+        commands.concat("JUMP"); // прыгать
+        commands.concat("WALK"); // гулять
 
         LinkedList<CommandsPetAnimal> list = new LinkedList<>(Arrays.asList(CommandsPetAnimal.values()));
         System.out.println("Команды домашних животных: " + list);

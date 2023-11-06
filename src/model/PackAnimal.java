@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class PackAnimal extends Animal{
 
     Animal animal;
-    public PackAnimal(int id, String name, String dateOfBirth, ArrayList<String> commands) {
+    public PackAnimal(int id, String name, String dateOfBirth, String commands) {
         super(id, name, dateOfBirth, commands);
     }
 
