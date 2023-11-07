@@ -1,7 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-
 public class Cat extends PetAnimal {
     public Cat(int id, String name, String dateOfBirth, String commands) {
         super(id, name, dateOfBirth, commands);

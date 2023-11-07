@@ -21,6 +21,7 @@ public class View {
                 "Посмотреть список команд животного >>> 3\n" +
                 "Добавить новую команду животному >>> 4\n" +
                 "Найти животноe по дате рождения >>> 5\n" +
+                "Показать количество животных в списке >>> 6\n" +
                 "Выход из меню >>> 0\n" +
                 "Введите номер команды или введите 0 для выхода из меню: \n>>> ");
         return inputFromUser();
@@ -86,4 +87,15 @@ public class View {
         System.out.println("Животное уже обучено данной команде!");
     }
 
+    public void printSizeOfCollection(){
+        System.out.println("Количество животных в списке >>>");
+    }
+
+    public void printZeroAnimals(){
+        System.out.println("В списке нет животных");
+    }
+
+    public void printUnknownCommandMenu(){
+        System.out.println("Неизвестная команда, повторите ввод");
+    }
 }

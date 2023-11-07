@@ -70,8 +70,18 @@ public class Controller {
                     view.printCheckAnimal(animal3);
                     break;
 
+                case ("6"):
+                    int size = animalLog.sizeOfCollection(animalLog);
+                    if (size == 0){
+                        view.printZeroAnimals();
+                    } else {
+                        view.printSizeOfCollection();
+                        System.out.println(size);
+                    }
+                    break;
+
                 default:
-                    System.out.println("Неизвестная команда, повторите ввод");
+                    view.printUnknownCommandMenu();
                     break;
             }
         }

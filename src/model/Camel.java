@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ArrayList;
 
 public class Camel extends PackAnimal{
     public Camel(int id, String name, String dateOfBirth, String commands) {

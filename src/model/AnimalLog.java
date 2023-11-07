@@ -78,6 +78,12 @@ public class AnimalLog implements AnimalLogInterface {
         }
         return null;
     }
+
+    @Override
+    public int sizeOfCollection(AnimalLog animalLog) {
+        return animalLog.animalLinkedList.size();
+    }
+
     @Override
     public String toString() {
         String animalText = "";
