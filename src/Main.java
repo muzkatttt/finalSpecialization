@@ -11,10 +11,11 @@ public class Main {
         // 0 Whiskers 2019-05-15 Sit Roll
         // 2 Fido 2020-01-01 Sit Roll
         // 3 Hammy 2021-03-10 Roll
-        // 4 Thunder 2015-07-21 добавить команду
+        // 4 Thunder 2015-07-21 Trot Canter Gallop
+        // 7 Storm 2014-05-05 Trot Canter
         // 9 Pelmeshka 2020-10-10 Meow
         // 5 Sandy 2016-11-03
-        // 6, "Burro", "2019-01-23"
+        // 6 Burro 2019-01-23
 
     }
 }

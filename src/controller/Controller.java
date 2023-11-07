@@ -6,7 +6,6 @@ import view.View;
 
 public class Controller {
 
-    // контроллер должен содерджать в себе только view и model
     AnimalLog animalLog;
     View view;
 
@@ -50,7 +49,7 @@ public class Controller {
                     String name = view.inputFromUser();
                     Animal animal2 = animalLog.searchAnimal(name);
                     if (animal2 == null) {
-                        System.out.println("Животное не найдено");
+                        view.animalNotFound();
                         break;
                     } else {
                        String commands = view.addCommand();
@@ -58,7 +57,7 @@ public class Controller {
                         for (String command:
                                 animal2.getCommands().split(" ")) {
                             if(command.equals(commands)){
-                                System.out.println("Животное уже обучено данной команде");
+                                view.animalHadCommand();
                                 break;
                             } else {
                                 animal2.setCommands(animal2.getCommands() + " " + commands);                            }

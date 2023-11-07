@@ -20,19 +20,20 @@ public class View {
                 "Добавить животное >>> 2\n" +
                 "Посмотреть список команд животного >>> 3\n" +
                 "Добавить новую команду животному >>> 4\n" +
-                "Найти животнок по дате рождения >>> 5\n" +
+                "Найти животноe по дате рождения >>> 5\n" +
                 "Выход из меню >>> 0\n" +
                 "Введите номер команды или введите 0 для выхода из меню: \n>>> ");
         return inputFromUser();
     }
 
     public void exit(){
-        System.out.println("Поздравляю с успешным выходом из программы!");
+        System.out.println("Поздравляем с успешным выходом из программы!");
     }
 
     public void add(){
-        System.out.println("Добавить животное\n Id, Имя, Дата рождения, Выполняемые команды");
-        System.out.println("Введите: Id, Имя, Дата рождения, Выполняемые команды \n>>> ");
+        System.out.println("Добавить животное\nId, Имя, Дата рождения, Выполняемые команды");
+        System.out.println("Введите последовательно через пробел 4 значения: >>> \nId в формате >>> целое число,\nИмя >>> в формате строки, дату рождения в формате >>> гггг-мм-дд," +
+                "\nВыполняемые команды >>> в формате строки\n>>> ");
     }
 
     public void listCommands(Animal animal) {
@@ -62,6 +63,7 @@ public class View {
         String date = inputFromUser();
         return date;
     }
+
     public String addCommand(){
         System.out.println("Введите название команды \n>>> ");
         String command = inputFromUser();
@@ -74,6 +76,14 @@ public class View {
         } else {
             System.out.println(animal.toString());
         }
+    }
+
+    public void animalNotFound(){
+        System.out.println("Животное не найдено");
+    }
+
+    public void animalHadCommand(){
+        System.out.println("Животное уже обучено данной команде!");
     }
 
 }
