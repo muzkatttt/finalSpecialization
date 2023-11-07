@@ -7,6 +7,7 @@ public class Main {
         Controller controller = new Controller(new AnimalLog(), new View());
         controller.start();
 
+        // Список животных для проверки работы программы
         // 1 Karamel 2020-04-26 Meow
         // 0 Whiskers 2019-05-15 Sit Roll
         // 2 Fido 2020-01-01 Sit Roll

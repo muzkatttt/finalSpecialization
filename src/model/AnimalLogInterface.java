@@ -10,4 +10,6 @@ public interface AnimalLogInterface {
 
     LinkedList<Animal> deleteAnimalFromLinkedList(Animal animal);
     String addCommand(Animal animal, String newCommand);
+
+    int sizeOfCollection(AnimalLog animalLog);
 }
