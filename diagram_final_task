@@ -1,0 +1,129 @@
+classDiagram
+direction BT
+class Animal {
+  + Animal(int, String, String, String) 
+  + Animal() 
+  + Animal(String) 
+  + Animal(int, String, String) 
+  ~ String dateOfBirth
+  ~ String commands
+  ~ String name
+  ~ int id
+  + toString() String
+   String name
+   String dateOfBirth
+   int id
+   String commands
+}
+class AnimalLog {
+  + AnimalLog() 
+  + addCommand(Animal, String) String
+  + toString() String
+  + addAnimalToList(Animal) void
+  + searchAnimal(String) Animal
+  + showAllAnimals() void
+  + searchDateOfBirth(String) Animal
+  + showAllCommands(Animal) void
+  + deleteAnimalFromLinkedList(Animal) LinkedList~Animal~
+}
+class AnimalLogInterface {
+<<Interface>>
+  + addCommand(Animal, String) String
+  + deleteAnimalFromLinkedList(Animal) LinkedList~Animal~
+  + showAllAnimals() void
+  + addAnimalToList(Animal) void
+  + showAllCommands(Animal) void
+}
+class Camel {
+  + Camel(int, String, String, String) 
+  + Camel(int, String, String) 
+  + toString() String
+}
+class Cat {
+  + Cat(int, String, String) 
+  + Cat(int, String, String, String) 
+  + toString() String
+}
+class CommandsPackAnimals {
+<<enumeration>>
+  + CommandsPackAnimals() 
+  + values() CommandsPackAnimals[]
+  + valueOf(String) CommandsPackAnimals
+}
+class CommandsPetAnimal {
+<<enumeration>>
+  + CommandsPetAnimal() 
+  + valueOf(String) CommandsPetAnimal
+  + values() CommandsPetAnimal[]
+}
+class Controller {
+  + Controller(AnimalLog, View) 
+  + start() void
+}
+class Dog {
+  + Dog(int, String, String, String) 
+  + Dog(int, String, String) 
+  + toString() String
+}
+class Donkey {
+  + Donkey(int, String, String) 
+  + Donkey(int, String, String, String) 
+  + toString() String
+}
+class Hamster {
+  + Hamster(int, String, String) 
+  + Hamster(int, String, String, String) 
+  + toString() String
+}
+class Horse {
+  + Horse(int, String, String, String) 
+  + Horse(int, String, String) 
+  + toString() String
+}
+class Main {
+  + Main() 
+  + main(String[]) void
+}
+class PackAnimal {
+  + PackAnimal(int, String, String) 
+  + PackAnimal(int, String, String, String) 
+  ~ showAllCommands(ArrayList~CommandsPackAnimals~) void
+}
+class PetAnimal {
+  + PetAnimal(int, String, String) 
+  + PetAnimal(int, String, String, String) 
+  ~ showAllCommandsPetAnimal(String) void
+}
+class View {
+  + View() 
+  + inputFromUser() String
+  + exit() void
+  + animalHadCommand() void
+  + animalNotFound() void
+  + printCheckAnimal(Animal) void
+  + searchName() void
+  + menu() String
+  + listCommands(Animal) void
+  + searchDateOfBirth() String
+  + startListCommand() String
+  + addCommand() String
+  + add() void
+}
+
+AnimalLog "1" *--> "animalLinkedList *" Animal 
+AnimalLog  ..>  AnimalLogInterface 
+Camel  -->  PackAnimal 
+Cat  -->  PetAnimal 
+Controller  ..>  Animal : «create»
+Controller "1" *--> "animalLog 1" AnimalLog 
+Controller "1" *--> "view 1" View 
+Dog  -->  PetAnimal 
+Donkey  -->  PackAnimal 
+Hamster  -->  PetAnimal 
+Horse  -->  PackAnimal 
+Main  ..>  AnimalLog : «create»
+Main  ..>  Controller : «create»
+Main  ..>  View : «create»
+PackAnimal  -->  Animal 
+PackAnimal "1" *--> "animal 1" Animal 
+PetAnimal  -->  Animal 

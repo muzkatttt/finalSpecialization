@@ -1,92 +1,89 @@
 package view;
 
 import model.Animal;
-import model.AnimalLog;
-import controller.Controller;
-import java.util.LinkedList;
 import java.util.Scanner;
 
 public class View {
-    private Animal animal;
-    private final AnimalLog animalLog = new AnimalLog(animal);
-    LinkedList<Animal> animalLinkedList;
-    Controller controller;
 
-    public View(Animal animal, Controller controller) {
-        this.animal = animal;
-        this.controller = controller;
+    public View() {
+
     }
 
-    private String inputFromUser(String message) {
+    public String inputFromUser() {
         Scanner in = new Scanner(System.in);
-        System.out.print(message);
         return in.nextLine();
     }
-    public void start() {
 
-        while (true) {
-            System.out.println("Для выбора доступных команд нажмите: \n" +
-                    "Показать всех животных в списке >>> 1\n" +
-                    "Добавить животное >>> 2\n" +
-                    "Посмотреть список команд животного >>> 3\n" +
-                    "Добавить новую команду животному >>> 4\n" +
-                    "Выход из меню >>> 0");
-            String inputMessage = inputFromUser("Введите номер команды или введите 0 для выхода из меню: \n>>> ");
-            String stringInputFromUser;
+    public String menu(){
+        System.out.println("Для выбора доступных команд нажмите: \n" +
+                "Показать всех животных в списке >>> 1\n" +
+                "Добавить животное >>> 2\n" +
+                "Посмотреть список команд животного >>> 3\n" +
+                "Добавить новую команду животному >>> 4\n" +
+                "Найти животноe по дате рождения >>> 5\n" +
+                "Выход из меню >>> 0\n" +
+                "Введите номер команды или введите 0 для выхода из меню: \n>>> ");
+        return inputFromUser();
+    }
 
-            switch (inputMessage) {
-                case ("0"):
-                    return;
+    public void exit(){
+        System.out.println("Поздравляем с успешным выходом из программы!");
+    }
 
-                case ("1"):
-                    System.out.println();
-                    controller.showAllAnimals();
-                    System.out.println();
-                    break;
+    public void add(){
+        System.out.println("Добавить животное\nId, Имя, Дата рождения, Выполняемые команды");
+        System.out.println("Введите последовательно через пробел 4 значения: >>> \nId в формате >>> целое число,\nИмя >>> в формате строки, дату рождения в формате >>> гггг-мм-дд," +
+                "\nВыполняемые команды >>> в формате строки\n>>> ");
+    }
 
-                case ("2"):
-                    System.out.println("Добавить животное\n Id, Имя, Дата рождения, Выполняемые команды");
-                    System.out.println();
-                    stringInputFromUser = inputFromUser("Введите: Id, Имя, Дата рождения, Выполняемые команды \n>>> ");
-                    stringInputFromUser.split("")[0] = String.valueOf(animal.getId());
-                    stringInputFromUser.split(" ")[1] = animal.getName();
-                    stringInputFromUser.split(" ")[2] = animal.getDateOfBirth();
-                    stringInputFromUser.split(" ")[3] = animal.getCommands();
-                    controller.addAnimalToList(animal);
-                    System.out.println(animal);
-                    break;
-
-                case ("3"):
-                    stringInputFromUser = inputFromUser("Введите имя животного \n>>> ");
-                    if (!animalLog.getClass().getName().equals(stringInputFromUser)) {
-                        System.out.println("Животное не найдено");
-                        break;
-                    }
-                    try {
-                        System.out.print("Команды животного >>>\n");
-                        //System.out.println(controller.showAllCommands());
-                        System.out.println();
-                    } catch (Exception e) {
-                        throw new RuntimeException(e);
-                    }
-                    break;
-
-                case ("4"):
-                    stringInputFromUser = inputFromUser("Введите имя животного\n>>> ");
-                    if (!animalLog.getClass().getName().equals(stringInputFromUser)) {
-                        System.out.println("Животное не найдено");
-                        break;
-                    } else {
-                        String command = inputFromUser("Введите команду для записи >>>\n");
-                        stringInputFromUser.split(" ")[0] = animal.getCommands();
-                        animal.getCommands().concat(command);
-                    }
-                    break;
-
-                default:
-                    System.out.println("Неизвестная команда, повторите ввод");
-                    break;
-            }
+    public void listCommands(Animal animal) {
+        if(animal == null) {
+            System.out.println("Животного не существует!");
+            return;
+        }
+        if(animal.getCommands().isEmpty()){
+            System.out.println("У животного нет команд");
+        } else {
+            System.out.println(animal.getCommands());
         }
     }
+
+    public String startListCommand(){
+        System.out.println("Введите имя животного \n>>> ");
+        String name = inputFromUser();
+        return name;
+    }
+
+    public void searchName(){
+        System.out.println("Введите имя животного\n>>> ");
+
+    }
+    public String searchDateOfBirth(){
+        System.out.println("Введите дату рождения животного\n>>> ");
+        String date = inputFromUser();
+        return date;
+    }
+
+    public String addCommand(){
+        System.out.println("Введите название команды \n>>> ");
+        String command = inputFromUser();
+        return command;
+    }
+
+    public void printCheckAnimal(Animal animal){
+        if (animal == null) {
+            System.out.println("Животное не найдено");
+        } else {
+            System.out.println(animal.toString());
+        }
+    }
+
+    public void animalNotFound(){
+        System.out.println("Животное не найдено");
+    }
+
+    public void animalHadCommand(){
+        System.out.println("Животное уже обучено данной команде!");
+    }
+
 }
